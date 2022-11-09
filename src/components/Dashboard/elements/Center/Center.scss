@@ -1,0 +1,43 @@
+aside{
+    width: 100%;
+    background-color: #f6f6f6;
+    padding: 5vh 0vh 0vh 5vw;
+
+    .divImageDecorationAbsolute{
+        width: 100%;
+        height: 40%;
+        position: absolute;
+        margin: -5vh 0vh 0vh -5vw;
+        background-image: url(https://images.unsplash.com/photo-1661243967814-a52975ed8c14?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+        background-size: cover;
+        filter: brightness(0.6);
+        z-index: 0;
+    }
+
+    header{
+        width: 100%;
+        display: flex;
+
+        h1{
+            width: fit-content;
+            font-size: 2vw;
+            font-weight: 600;
+            color: white;
+            filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.781));
+            letter-spacing: .5px;
+        }   
+        span{
+            width: 30%;
+            position: relative;
+            margin-left: auto;
+
+            input{
+                width: 90%;
+                padding: 1.5vh;
+                border-radius: 1vw;
+                margin-top: 2vh;
+            }
+        } 
+    }
+    
+}
