@@ -1,13 +1,14 @@
 .divMenuLateralLeft{
     width: fit-content;
     max-width: 10vh;
-    display: block;
+    display: grid;
+    grid-template-rows: 15% auto;
     padding: 2vh;
     background-color: #000000;
 
     i{
-        width: 50%;
-        height: 5vw;
+        width: 45%;
+        height: 100%;
         display: block;
         margin: auto auto 10vh auto;
         background-image: url(https://f.hubspotusercontent10.net/hubfs/5506418/Nuevo%20Evaluatest/Brive-Be-color.png);
