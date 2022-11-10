@@ -21,6 +21,8 @@ export default function Center(){
                     <UsersViewer
                         key={user.id}
                         name={user.name}
+                        email={user.email}
+                        phoneNumber={user.number}
                         urlPhoto={user.urlPhoto}
                     />
                     )
