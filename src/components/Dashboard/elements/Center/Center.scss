@@ -13,5 +13,14 @@ aside{
         filter: brightness(0.6);
         z-index: 0;
     }
+
+    .sectionListUsers{
+        width: -webkit-fill-available;
+        height: 100%;
+        position: fixed;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        margin-top: 5vh;
+    }
     
 }
