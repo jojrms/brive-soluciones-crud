@@ -6,36 +6,39 @@ export default function Menuleft(){
         <div className="divMenuLateralLeft">
             <i/>
 
+            <p className="pMenu">MENU</p>
             <ul>
                 <li>
-                    <img width={"30%"} src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/32/FFFFFF/external-dashboard-ui-essential-kmg-design-glyph-kmg-design.png"/>                    
+                    <img src="https://img.icons8.com/fluency-systems-regular/96/FFFFFF/null/home.png"/>
                     <p>Dashboard</p>
                 </li>
                 <li>
-                    <img src="https://img.icons8.com/material-rounded/24/FFFFFF/speech-bubble-with-dots.png"/>
+                    <img src="https://img.icons8.com/fluency-systems-regular/96/FFFFFF/null/speech-bubble--v1.png"/>
                     <p>Chat</p>
                 </li>
-                <li>
-                    <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/arms-up.png"/>
+                <li className="active">
+                    <img src="https://img.icons8.com/fluency-systems-regular/96/FFFFFF/null/user-group-man-man.png"/>
                     <p>Empleados</p>
                 </li>
                 <li>
-                    <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/new-job.png"/>
+                    <img src="https://img.icons8.com/fluency-systems-regular/96/FFFFFF/null/find-matching-job.png"/>
                     <p>Vacantes</p>
                 </li>
                 <li>
-                    <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/to-do.png"/>
+                    <img src="https://img.icons8.com/fluency-systems-regular/96/FFFFFF/null/personal-video-recorder-menu.png"/>
                     <p>Tareas</p>
                 </li>
-
+            </ul>
+            <ul>
                 <li>
-                    <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/test-account.png"/>
-                    <p>Tu Cuenta</p>
+                    <img src="https://img.icons8.com/fluency-systems-regular/96/FFFFFF/null/user-shield.png"/>
+                    <p>User Role Admin</p>
                 </li>
-                <li style={{marginTop: '150%'}}>
-                    <img src="https://img.icons8.com/metro/26/FFFFFF/fire-exit.png"/>
-                    <p>Salir</p>
+                <li>
+                    <img src="https://img.icons8.com/fluency-systems-regular/96/FFFFFF/null/job.png"/>
+                    <p>Settings</p>
                 </li>
+                
             </ul>
                 
         </div>
