@@ -59,17 +59,23 @@ export default function CreateUser(){
         
     }
 
+    function closeDiv(){
+        document.getElementById("divAbsoluteCreate").style.display = 'none';
+    }
+
     return(
         <div className='divAbsolute' id='divAbsoluteCreate'>
 
             <span id="spanBackgroundCreate">
                 <div>
                     <img src="https://img.icons8.com/small/32/000000/user-group-man-man.png"/>
-                    <h1>Configure a conta do usuário</h1>
-                    <button id='btnClose'/>
+                    <h1>Haz la configuración de la cuenta del usuario</h1>
+                    <button id='btnClose' onClick={closeDiv}>
+                        <img src="https://img.icons8.com/windows/32/null/macos-close.png"/>
+                    </button>
                 </div>
 
-                <p>Crie uma conta para o usuário físico que terá acesso ao dashboard</p>
+                <p>Agregue una cuenta a uno de tus empleados para que tenga acceso al dashboard</p>
 
                 <input type='text' placeholder='Nombre y Apellido'/>
                 <input type='text' placeholder='Username'/>
@@ -77,7 +83,7 @@ export default function CreateUser(){
                 
                 <button id='btnAddPerson' onClick={createUser}>
                     <img src="https://img.icons8.com/small/16/F5F5F5/add.png"/>
-                    Criar Usuário
+                    Crear
                 </button>  
             </span>
 
