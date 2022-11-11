@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+
 import {Users} from '../../../../FakeData'
 
 import Header from './Header/Header';
@@ -7,16 +9,19 @@ import './Center.scss'
 
 export default function Center(){
 
-    console.log(Users);
+    // Puxa a lista de usuários fakes criados no arquivo FakeData.js
+    const userList = useSelector((state) => state.users.value)
+    localStorage.setItem('FakeUsers', JSON.stringify(userList));
+
+    const users = JSON.parse(localStorage.getItem('FakeUsers'));
 
     return(
         <aside>
-            <div className='divImageDecorationAbsolute'/>
             <Header
                 h1Title={"Empleados"}
-            />
+            /> 
             <section className='sectionListUsers'>
-                {Users.map((user) => {
+                {users.map((user) => {
                     return(
                     <UsersViewer
                         key={user.id}
