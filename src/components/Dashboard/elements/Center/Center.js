@@ -25,6 +25,7 @@ export default function Center(){
                     return(
                     <UsersViewer
                         key={user.id}
+                        id={user.id}
                         name={user.name}
                         email={user.email}
                         phoneNumber={user.number}
