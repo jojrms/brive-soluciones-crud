@@ -1,7 +1,5 @@
 import { useSelector } from 'react-redux';
 
-import {Users} from '../../../../FakeData'
-
 import Header from './Header/Header';
 import UsersViewer from './Users/UsersViewer';
 
@@ -15,11 +13,22 @@ export default function Center(){
 
     const users = JSON.parse(localStorage.getItem('FakeUsers'));
 
+    function createUser(){
+        document.getElementById('divAbsoluteCreate').style.display = 'flex';
+    }
+
     return(
         <aside>
+
             <Header
                 h1Title={"Empleados"}
-            /> 
+            />
+
+            <button id='btnCreateUser' onClick={createUser}>
+                <img src="https://img.icons8.com/small/16/FFFFFF/add.png"/>
+                Crear Usuario
+            </button>
+
             <section className='sectionListUsers'>
                 {users.map((user) => {
                     return(
