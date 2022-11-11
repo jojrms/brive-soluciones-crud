@@ -1,4 +1,4 @@
-import { Users } from './FakeData';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Dashboard from './components/Dashboard/Dashboard';
 
@@ -6,14 +6,15 @@ import './components/General.css'
 
 function App() {
 
-  // Poniendo el array con los usuarios fakes en el localStorage 
-  // con la llave 'fakeUsers'
-  localStorage.setItem('fakeUsers', JSON.stringify(Users));
-
-  return (
-    <div className="App">
-      <Dashboard/>
-    </div>
+  return(
+      <BrowserRouter>
+        <div className="App">
+          <Routes>
+            <Route path='/' element={<Dashboard/>}/>
+          </Routes>
+        </div>   
+      </BrowserRouter>
+    
   );
 }
 
