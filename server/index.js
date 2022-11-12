@@ -48,6 +48,12 @@ app.post("/createUser", async(req, res) => {
     }
 });
 
+app.delete("/deleteUser/:id", async(req, res) => {
+    const id = req.params.id;
+    await UserModel.findByIdAndRemove(id).exec();
+    res.send("deleted user")
+});
+
 app.listen(3001, () => {
     console.log('server funcionando');
 })

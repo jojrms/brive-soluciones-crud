@@ -1,15 +1,20 @@
-import { useDispatch } from 'react-redux'
-
-import { deleteUser } from '../../../../../features/Users';
+import { useNavigate } from 'react-router-dom';
+import Axios from 'axios';
 
 import './UsersViewer.scss'
 
 export default function UsersViewer({id, urlPhoto, name, email, phoneNumber}){
 
-    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const deleteUser = (id) => {
+        navigate(`/deleteUser/${id}`);
+        Axios.delete(`http://localhost:3001/deleteUser/${id}`);
+        navigate(`/`)
+    }
 
     return(
-        <div className='divBackgroundUser'>
+        <div className='divBackgroundUser' key={id}>
             <span style={{backgroundImage: `url(${urlPhoto})`}} className='spanPhoto'/>
             <div className='spanInfoUser'>
                 <h3>{name}</h3>
@@ -19,7 +24,7 @@ export default function UsersViewer({id, urlPhoto, name, email, phoneNumber}){
             <div className='divButtonsFunction'>
                 <button id='btnEditUser'/>
                 <button id='btnSeeUser'/>
-                <button id='btnDeleteUser'  onClick={() => {dispatch(deleteUser({id: id}))}}/>
+                <button id='btnDeleteUser' onClick={() => {deleteUser(id)}} />
             </div>
         </div>
     )

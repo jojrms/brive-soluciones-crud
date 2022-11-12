@@ -38,8 +38,8 @@ export default function Center(){
                 {userList.map((user) => {
                     return(
                     <UsersViewer
-                        key={user.id}
-                        id={user.id}
+                        key={user._id}
+                        id={user._id}
                         name={user.name}
                         email={user.email}
                         phoneNumber={user.number}
