@@ -25,7 +25,7 @@ export default function Center(){
             />
 
             <button id='btnCreateUser' onClick={createUser}>
-                <img src="https://img.icons8.com/small/16/FFFFFF/add.png"/>
+                <img src="https://img.icons8.com/small/96/FFFFFF/add.png"/>
                 Crear Usuario
             </button>
 
