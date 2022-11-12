@@ -1,17 +1,22 @@
 import { useSelector } from 'react-redux';
+import Axios from 'axios';
 
 import Header from './Header/Header';
 import UsersViewer from './Users/UsersViewer';
 
 import './Center.scss'
+import { useEffect, useState } from 'react';
 
 export default function Center(){
 
-    // Puxa a lista de usuários fakes criados no arquivo FakeData.js
-    const userList = useSelector((state) => state.users.value)
-    localStorage.setItem('FakeUsers', JSON.stringify(userList));
-
-    const users = JSON.parse(localStorage.getItem('FakeUsers'));
+    const [userList, setUserList] = useState([]);
+    
+    useEffect(() => {
+        Axios.get("http://localhost:3001")
+            .then((res) => {
+                setUserList(res.data)
+            })
+    }, []);
 
     function createUser(){
         document.getElementById('divAbsoluteCreate').style.display = 'flex';
@@ -30,7 +35,7 @@ export default function Center(){
             </button>
 
             <section className='sectionListUsers'>
-                {users.map((user) => {
+                {userList.map((user) => {
                     return(
                     <UsersViewer
                         key={user.id}

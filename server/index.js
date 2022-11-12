@@ -15,6 +15,18 @@ mongoose.connect(
     }
 );
 
+app.get("/", async(req, res) => {
+    UserModel.find({}, (err, result) => {
+
+        if( err ){
+            res.send(err)
+        }
+
+        res.send(result)
+        
+    });
+});
+
 app.post("/createUser", async(req, res) => {
 
     const name = req.body.name;
