@@ -16,18 +16,15 @@ export default function CreateUser(){
     })
 
     const addUser = () => {
-        const user = Axios.post('http:localhost:3001/createUser', {
-            name: data.name,
-            email: data.email,
-            phone: data.phone,
-            photo_url: data.photo_url,
+
+        Axios.post("http://localhost:3001/createUser", {
+                name: data.name,
+                email: data.email,
+                phone: data.phone,
+                photo_url: data.photo_url,
         });
 
-        if( user ){
-            document.getElementById("divAbsoluteCreate").style.display = 'none';
-            console.log(user);    
-        }
-
+        document.getElementById("divAbsoluteCreate").style.display = 'none';
         
     };
 
