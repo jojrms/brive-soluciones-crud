@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux'
-
-import { addUser } from '../../../../../features/Users';
+import { useDispatch } from 'react-redux';
+import Axios from 'axios';
 
 import './CreateUser.scss'
 
@@ -11,53 +10,26 @@ export default function CreateUser(){
 
     const [data, setData] = useState({
         name: '',
-        username: '',
+        phone: '',
         email: '',
+        photo_url: '',
     })
 
-    const createUser = () => {
+    const addUser = () => {
+        const user = Axios.post('http:localhost:3001/createUser', {
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            photo_url: data.photo_url,
+        });
 
-        if(data.name.length < 5 || data.email.length < 10 || data.username.length < 5){
-            window.alert('Não foi possível criar este usuário. Preencha todos os campos corretamente')
-        } 
-        else{
-
-            // Puxa a chave "newUser" para fazer verificação de sua existência
-            const newUser = JSON.parse(localStorage.getItem('newUser'));
-
-            // Cria uma constante para armazenar em uma array os dados 
-            // do usuário que será criado
-            const user = dispatch(addUser({
-                id: newUser[newUser.length - 1].id + 1, 
-                name: data.name , 
-                username: data.username , 
-                email: data.email ,
-                urlPhoto: "https://img.icons8.com/fluency-systems-regular/96/000000/user.png" ,
-            }))
-
-            console.log('novo usuario no dispatch', user.payload);
-
-            // Armazena em uma constante a array com os usuários fakes da
-            // chave "users"
-            const fakeUsers = JSON.parse(localStorage.getItem('users'));
-            console.log('usuarios fakes', fakeUsers);
-
-            // Se existir essa chave com um valor, executa
-            if( newUser ){ 
-
-                // Unifico a array do localStorage com o objeto
-                // que contem o novo usuário
-                newUser.push(user.payload);
-                localStorage.setItem('newUser', JSON.stringify(newUser));
-
-                console.log(newUser, 'A lista de usuários existentes foi atualizado');
-            }      
-
-            document.getElementById('divAbsoluteCreate').style.display = 'none';
+        if( user ){
+            document.getElementById("divAbsoluteCreate").style.display = 'none';
+            console.log(user);    
         }
 
         
-    }
+    };
 
     function closeDiv(){
         document.getElementById("divAbsoluteCreate").style.display = 'none';
@@ -77,13 +49,12 @@ export default function CreateUser(){
 
                 <p>Agregue una cuenta a uno de tus empleados para que tenga acceso al dashboard</p>
 
-                <input type='text' placeholder='Nombre y Apellido'/>
-                <input type='text' placeholder='Username'/>
-                <input type='email' placeholder='Email'/>
+                <input type='text' placeholder='Nombre Completo' onChange={(event) => {setData({...data, name: event.target.value})}}/>
+                <input type='text' placeholder='Teléfono' onChange={(event) => {setData({...data, phone: event.target.value})}}/>
+                <input type='email' placeholder='Email' onChange={(event) => {setData({...data, email: event.target.value})}}/>
                 
-                <button id='btnAddPerson' onClick={createUser}>
-                    <img src="https://img.icons8.com/small/16/F5F5F5/add.png"/>
-                    Crear
+                <button id='btnAddPerson' onClick={addUser}>
+                    Concluir la creación
                 </button>  
             </span>
 
