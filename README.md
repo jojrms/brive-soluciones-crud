@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# SOBRE EL PROJECTO
+Este desarrollo fue hecho por Jordana y es una listaje de usuarios cadastrados en la base de datos con algumas funciones, como agregar más uno, cambiar los datos del usuário cadastrado y excluir. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## DB
+Fue usado el mongoDB para armazenar y hacer las rutas con las funciones de GET, POST y DELETE. 
 
-## Available Scripts
+Todas las rutas están guardadas en la pasta "server/index.js".
 
-In the project directory, you can run:
+### PARA EL ACCESO DEL DB
+1. Accesa el site: "https://account.mongodb.com/account/login?n=%2Fv2%2F636ea0121e1d3c1182d9306d&nextHash=%23clusters" para hacer login con las credenciales dichas abajo:
 
-### `npm start`
+Email: jordanarmos@gmail.com
+Password: password123&
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Después de hacer el login, entre en el Atlas, en la url: "https://cloud.mongodb.com/v2/636ea0121e1d3c1182d9306d#clusters"
+Vá hasta "Security" y "Network Access" y clique en el botón "+ADD IP ADRESS", y cadastre el IP de tu computadora en el botón "ALLOW ACCESS FROM ANYWHERE"
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. Vá en "Database" y en el deploy llamado "CRUD", ponga "Connect". Selecione la opción "MongoDB Compass", seguido de "I have MongoDB Compass" y copia el string de conexión.
 
-### `npm test`
+4. Haz el download de MongoDB Compass y acessa con:
+"mongodb+srv://admin:PaRcb3PEzKa2YFc1@crud.bfowslq.mongodb.net/test"
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Todos los datos estan en el db "users", table "users"
 
-### `npm run build`
+## REQUISICIONES
+React = ^18.2.0,
+Node = >=6.0.0
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## LENGUAJE, FRAMEWORKS Y BIBLIOTECAS
+Lenguaje: JavaScript 
+Framework: React.js 
+Bibliotecas: react, react-router-dom, axios, yup, 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## MOCKUP
+Los mockups usado para las telas fueron sacados del site Dribbble, haciendo algunas modificaciones en ellos. Actualmente el design no está responsivo, pués fue creado solo para desktop. Los valores usados fueron, en su gran mayoria, con "vh", "vw" e "%".
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## COMO EMPREZAR
+1. Clona este código en el CMD usando el comando "git clone URL_AQUI",
+2. Despúes de clonado, entre en el arquivo y abra en su editor de codigo,
+3. Haga un 'npm install' para hacer download de todos los modulos node,
+4. Finalize con un 'npm start' para abrir un localhost
