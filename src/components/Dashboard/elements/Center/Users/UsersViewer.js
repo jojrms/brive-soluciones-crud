@@ -7,12 +7,15 @@ export default function UsersViewer({id, photoUrl, name, email, phoneNumber}){
 
     const navigate = useNavigate();
 
+    // Crea la funcion que vá llamar la ruta de 
+    // DELETE de usuarios
     const deleteUser = (id) => {
-        navigate(`/deleteUser/${id}`);
         Axios.delete(`http://localhost:3001/deleteUser/${id}`);
-        navigate(`/`)
     }
 
+    // Función que vá hacer la navegación hasta 
+    // la url que hace edición de las informaciones del
+    // usuario
     const editUser = (id) => {
         navigate(`/editUser/${id}`)
     }

@@ -8,8 +8,11 @@ import { useEffect, useState } from 'react';
 
 export default function Center(){
 
+    // Creando un Hook con todos los usuarios
+    // que está recibiendo del db
     const [userList, setUserList] = useState([]);
     
+    // Llama la ruta GET para recibir los usuarios
     useEffect(() => {
         Axios.get("http://localhost:3001")
             .then((res) => {
@@ -17,6 +20,8 @@ export default function Center(){
             })
     }, []);
 
+    // Función que vá hacer la div del elemento del archivo
+    // "CreateUser.js" quedar visible para crear usuario
     function createUser(){
         document.getElementById('divAbsoluteCreate').style.display = 'flex';
     }
@@ -35,6 +40,11 @@ export default function Center(){
             </button>
 
             <section className='sectionListUsers'>
+
+                {/* Hace un map en el hook de usuarios para 
+                exhibir cada uno con el elemento creado en 
+                el archivo "UsersViewer.js" */}
+                
                 {userList.map((user) => {
                     return(
                     <UsersViewer

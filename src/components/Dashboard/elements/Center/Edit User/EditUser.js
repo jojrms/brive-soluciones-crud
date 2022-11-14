@@ -12,6 +12,8 @@ export default function EditUser(){
     const navigate = useNavigate();
     const params = useParams();
 
+    // Crea un hook que vá armazenar las informaciones del
+    // usuario que vá ser editado, y reemplaza ellas
     const [dataUser, setDataUser] = useState({
         name: '',
         email: '',
@@ -21,8 +23,9 @@ export default function EditUser(){
 
     let datasUser;
 
-    console.log('lleno', dataUser);
-
+    // Llama la ruta GET que vá buscar el usuário que vá
+    // ser editado para recibir sus informaciones para armazenar
+    // en el hook
     useEffect(() => {
         Axios.post('http://localhost:3001/user', {id: params.id})
         .then(res => {
@@ -35,6 +38,8 @@ export default function EditUser(){
 
     }, [])
 
+    // Crea la función que vá hacer la modificación
+    // de los datos del usuário
     function editUser(){
 
         const newDatas = {

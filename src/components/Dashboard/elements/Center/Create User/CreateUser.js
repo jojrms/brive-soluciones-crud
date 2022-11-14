@@ -5,6 +5,8 @@ import './CreateUser.scss'
 
 export default function CreateUser(){
 
+    // Crea un hook que vá armazenar todas las informaciónes
+    // del usuário que vá ser creado
     const [data, setData] = useState({
         name: '',
         phone: '',
@@ -12,13 +14,14 @@ export default function CreateUser(){
         photo_url: '',
     })
 
+    // Función que vá crear el usuário en el db
     const addUser = () => {
 
         Axios.post("http://localhost:3001/createUser", {
-                name: data.name,
-                email: data.email,
-                phone: data.phone,
-                photo_url: data.photo_url,
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            photo_url: data.photo_url,
         });
 
         console.log(data)
@@ -26,6 +29,8 @@ export default function CreateUser(){
         
     };
 
+    // Función que vá cerrar y ocultar la tela
+    // de creación de usuários
     function closeDiv(){
         document.getElementById("divAbsoluteCreate").style.display = 'none';
     }
@@ -44,6 +49,7 @@ export default function CreateUser(){
                     </button>
                 </div>
 
+                {/* OPICIONES DE FOTOS PARA EL USUARIO CON MEMOJI */}
                 <section className='sectionInputImagesProfile'>
                     <label id='sectionInputLabel'>Selecciona un avatar</label>
                     <div className='divExbDivsWithInput'>
@@ -66,7 +72,7 @@ export default function CreateUser(){
                     </div>
                 </section>
                 
-
+                {/* INPUTS QUE VAN A RECIBIR LAS INFORMACIONES DEL USUÁRIO */}
                 <section className='sectionInputs'>
                     <label>Nombre Completo</label>
                     <input type='text' placeholder='Ex.: Joana Lopez' onChange={(event) => {setData({...data, name: event.target.value})}}/>
