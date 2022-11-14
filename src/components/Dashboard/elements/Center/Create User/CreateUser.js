@@ -29,6 +29,7 @@ export default function CreateUser(){
     function closeDiv(){
         document.getElementById("divAbsoluteCreate").style.display = 'none';
     }
+    
 
     return(
         <div className='divAbsolute' id='divAbsoluteCreate'>

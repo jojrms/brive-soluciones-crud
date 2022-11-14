@@ -1,6 +1,7 @@
 import Menuleft from './elements/Menu Left/MenuLeft'
 import Center from './elements/Center/Center'
 import CreateUser from './elements/Center/Create User/CreateUser'
+import EditUser from './elements/Center/Edit User/EditUser'
 
 import "./Dashboard.scss"
 

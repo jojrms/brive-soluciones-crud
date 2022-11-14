@@ -48,10 +48,35 @@ app.post("/createUser", async(req, res) => {
     }
 });
 
+app.post('/user', (req, res) => {
+    UserModel.find({_id: req.body.id}, function(result, err){
+        if(!err){
+            res.send(result)
+        } else{
+            res.send(err)
+        }
+    })
+});
+
 app.delete("/deleteUser/:id", async(req, res) => {
     const id = req.params.id;
     await UserModel.findByIdAndRemove(id).exec();
     res.send("deleted user")
+});
+
+app.post("/editUser", async(req, res) => {
+
+    UserModel.findOneAndUpdate({_id: req.body.id}, {
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+    }, (err) => {
+        if(!err){
+            res.send("The user has updated");
+        } else{
+            res.send(err)
+        }
+    })
 });
 
 app.listen(3001, () => {

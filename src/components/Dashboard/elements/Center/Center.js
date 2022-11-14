@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import Axios from 'axios';
 
 import Header from './Header/Header';
@@ -21,6 +20,7 @@ export default function Center(){
     function createUser(){
         document.getElementById('divAbsoluteCreate').style.display = 'flex';
     }
+    
 
     return(
         <aside>
@@ -42,7 +42,7 @@ export default function Center(){
                         id={user._id}
                         name={user.name}
                         email={user.email}
-                        phoneNumber={user.number}
+                        phoneNumber={user.phone}
                         photoUrl={user.photo_url}
                     />
                     )

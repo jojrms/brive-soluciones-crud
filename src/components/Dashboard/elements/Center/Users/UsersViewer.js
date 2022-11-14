@@ -13,6 +13,10 @@ export default function UsersViewer({id, photoUrl, name, email, phoneNumber}){
         navigate(`/`)
     }
 
+    const editUser = (id) => {
+        navigate(`/editUser/${id}`)
+    }
+
     return(
         <div className='divBackgroundUser' key={id}>
             <span style={{backgroundImage: `url(${photoUrl})`}} className='spanPhoto'/>
@@ -22,8 +26,7 @@ export default function UsersViewer({id, photoUrl, name, email, phoneNumber}){
                 <p>E-mail: {email}</p>
             </div>
             <div className='divButtonsFunction'>
-                <button id='btnEditUser'/>
-                <button id='btnSeeUser'/>
+                <button id='btnEditUser' onClick={() => {editUser(id)}}/>
                 <button id='btnDeleteUser' onClick={() => {deleteUser(id)}} />
             </div>
         </div>
