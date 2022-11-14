@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Axios from 'axios';
-import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup';
 
 import './CreateUser.scss'
@@ -56,6 +55,7 @@ export default function CreateUser(){
 
                 console.log(data)
                 document.getElementById("divAbsoluteCreate").style.display = 'none';
+                window.location.reload();
 
             } else{
                 alert('Los datos no estan correctos. Por favor, arregle y intente otra vez.')

@@ -14,8 +14,8 @@ export default function DeleteUser(){
         Axios.delete(`http://localhost:3001/deleteUser/${id}`);
         
         document.getElementById('spanBackgroundAbsoluteDeleteUser').style.display = 'none';
-        
         navigate('/');
+        window.location.reload();
     }
 
     function closeDelete(){
