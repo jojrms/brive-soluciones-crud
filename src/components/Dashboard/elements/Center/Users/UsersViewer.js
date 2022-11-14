@@ -3,7 +3,7 @@ import Axios from 'axios';
 
 import './UsersViewer.scss'
 
-export default function UsersViewer({id, urlPhoto, name, email, phoneNumber}){
+export default function UsersViewer({id, photoUrl, name, email, phoneNumber}){
 
     const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ export default function UsersViewer({id, urlPhoto, name, email, phoneNumber}){
 
     return(
         <div className='divBackgroundUser' key={id}>
-            <span style={{backgroundImage: `url(${urlPhoto})`}} className='spanPhoto'/>
+            <span style={{backgroundImage: `url(${photoUrl})`}} className='spanPhoto'/>
             <div className='spanInfoUser'>
                 <h3>{name}</h3>
                 <p>Teléfono: {phoneNumber}</p>

@@ -1,50 +1,101 @@
+@mixin label {
+    font-size: 2vh;
+    color: #8f969f;
+}
+
 .divAbsolute{
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.233);
     z-index: 10;
-    display: none;
+    display: flex;
     position: absolute;
 
-    #spanBackgroundCreate{
+    #asideBackgroundCreate{
         width: 50vh;
-        height: 60vh;
+        height: fit-content;
         margin: auto;
         display: block;
         border-radius: 5px;
         background-color: white;
         padding: 5vh;
 
-        div{
-            display: flex;
+        #sectionInputLabel{
+            @include label;
+        }
 
-            img{
-                margin: auto 3vh auto 0vh;
+        div{
+
+            .spanImgIcon{
+                width: 10vh;
+                height: 10vh;
+                background-color: whitesmoke;
+                background-image: url(https://img.icons8.com/windows/96/null/add-user-group-woman-man.png);
+                background-size: 50%;
+                border-radius: 100%;
+                display: flex;
+                margin: -10vh auto 2vh auto;
             }
             h1{
-                width: 70%;
-                margin: auto 0vh auto 0vh;
+                margin: auto 0vh 3vh 0vh;
                 font-size: 3vh;
                 font-weight: 500;
+                text-align: center;
             }
             #btnClose{
-                margin: 0vh 0vw 0vh 43vh;
+                margin: -8vh 0vw 0vh 43vh;
                 position: absolute;
             }
         }
-        p{
-            font-size: 2vh;
-            margin-bottom: 3vh;
-            color: rgb(185, 185, 185);
+
+        .sectionInputImagesProfile{
+            margin: auto;
+            grid-gap: 1vh;
+            display: grid;
+
+            .divExbDivsWithInput{
+                display: grid;
+                grid-template-columns: repeat(4, auto);
+
+                input{
+                    width: 10vh;
+                    height: 10vh;
+                    position: absolute;
+                    margin-left: -.1vh;
+                    opacity: 0;
+                }
+                input:hover ~ img{
+                    border: 1px solid #131313;
+                }
+                input:checked ~ img{
+                    border: 1px solid #131313;
+                }
+                img{
+                    width: 10vh;
+                    border-radius: 100%;
+                    background-color: whitesmoke;
+                }
+            }
         }
-        input{
-            width: 92%;
-            height: fit-content;
-            border: 1px solid rgb(233, 233, 233);
-            padding: 2vh;
-            margin-bottom: 2vh;
-            border-radius: 10px;
+
+        .sectionInputs{
+
+            label{
+                @include label;
+            }
+            input{
+                width: 92%;
+                height: fit-content;
+                border: 1px solid rgb(233, 233, 233);
+                padding: 2vh;
+                margin-bottom: 2vh;
+                border-radius: 15px;
+            }  
+            div{
+                display: flex;
+            }  
         }
+        
         #btnAddPerson{
             width: 100%;
             background-color: #0ebe66;

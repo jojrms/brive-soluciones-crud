@@ -43,7 +43,7 @@ export default function Center(){
                         name={user.name}
                         email={user.email}
                         phoneNumber={user.number}
-                        urlPhoto={user.urlPhoto}
+                        photoUrl={user.photo_url}
                     />
                     )
                 })}

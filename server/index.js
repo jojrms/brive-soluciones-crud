@@ -32,13 +32,13 @@ app.post("/createUser", async(req, res) => {
     const name = req.body.name;
     const email = req.body.email;
     const phone = req.body.phone;
-    const url_photo = req.body.url_photo;
+    const photo_url = req.body.photo_url;
 
     const user = new UserModel({
         name: name,
         email: email,
         phone: phone,
-        url_photo: url_photo,
+        photo_url: photo_url,
     });
 
     try{

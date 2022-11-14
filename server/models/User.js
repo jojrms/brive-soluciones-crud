@@ -5,6 +5,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    photo_url:{
+        type: String,
+        required: true,
+    },
     email:{
         type: String,
         required: true,
@@ -13,11 +17,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    photo_url:{
-        type: String,
-        required: false,
-    }
 });
 
-const Users = mongoose.model("Users", UserSchema)
-module.exports = Users;
+const Users = mongoose.model("users", UserSchema)
+module.exports = Users; 

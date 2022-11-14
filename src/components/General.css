@@ -30,6 +30,8 @@ p{
 }
 
 button, li, input{
+    background-color: transparent;
     cursor: pointer;
     border: none;
+    font-family: Poppins;
 }
