@@ -20,6 +20,7 @@
         border-radius: 100%;
         background-size: cover;
         margin: auto;
+        background-color: whitesmoke;
     }
     .spanInfoUser{
         width: 100%;
@@ -36,7 +37,7 @@
     }
     .divButtonsFunction{
         width: fit-content;
-        margin: auto;
+        margin: auto 5px auto auto;
         display: flex;
         grid-gap: 2vh;
 

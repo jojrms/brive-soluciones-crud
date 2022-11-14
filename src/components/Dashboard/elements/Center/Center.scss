@@ -24,10 +24,11 @@ aside{
 
     .sectionListUsers{
         width: -webkit-fill-available;
-        height: 100%;
+        height: fit-content;
         position: fixed;
         display: grid;
-        grid-template-columns: repeat(3, auto);
+        grid-row-gap: 15%;
+        grid-template-columns: repeat(3, 33.3%);
         margin-top: 5vh;
     }
     
