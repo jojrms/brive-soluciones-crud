@@ -7,17 +7,16 @@ export default function UsersViewer({id, photoUrl, name, email, phoneNumber}){
 
     const navigate = useNavigate();
 
-    // Crea la funcion que vá llamar la ruta de 
-    // DELETE de usuarios
-    const deleteUser = (id) => {
-        Axios.delete(`http://localhost:3001/deleteUser/${id}`);
-    }
-
     // Función que vá hacer la navegación hasta 
     // la url que hace edición de las informaciones del
     // usuario
     const editUser = (id) => {
         navigate(`/editUser/${id}`)
+    }
+
+    function exbDelete(){
+        navigate(`/deleteUser/${id}`)
+        document.getElementById('spanBackgroundAbsoluteDeleteUser').style.display = 'flex'
     }
 
     return(
@@ -30,7 +29,7 @@ export default function UsersViewer({id, photoUrl, name, email, phoneNumber}){
             </div>
             <div className='divButtonsFunction'>
                 <button id='btnEditUser' onClick={() => {editUser(id)}}/>
-                <button id='btnDeleteUser' onClick={() => {deleteUser(id)}} />
+                <button id='btnDeleteUser' onClick={exbDelete}/>
             </div>
         </div>
     )
