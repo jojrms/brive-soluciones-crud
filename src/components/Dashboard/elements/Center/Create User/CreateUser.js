@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Axios from 'axios';
-import * as yup from "yup";
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup';
 
 import './CreateUser.scss'
 
@@ -15,20 +16,55 @@ export default function CreateUser(){
         photo_url: '',
     })
 
+    // Para hacer verificación y validación de los datos que
+    // están en el hook
+    let schema = yup.object().shape({
+        name: yup
+            .string()
+            .required(),
+        email: yup
+            .string()
+            .email()
+            .required(),
+        phone: yup
+            .number()
+            .required()
+            .positive()
+            .integer(),
+        photo_url: yup  
+            .string()
+            .required()
+    });
+    
+
     // Función que vá crear el usuário en el db
     const addUser = () => {
 
-        Axios.post("http://localhost:3001/createUser", {
-            name: data.name,
-            email: data.email,
-            phone: data.phone,
-            photo_url: data.photo_url,
-        });
+        // Verifica si los datos inseridos son validos o no
+        schema
+        .isValid(data)
+        .then( valid => {
 
-        console.log(data)
-        document.getElementById("divAbsoluteCreate").style.display = 'none';
+            if( valid ==  true ){
+
+                Axios.post("http://localhost:3001/createUser", {
+                    name: data.name,
+                    email: data.email,
+                    phone: data.phone,
+                    photo_url: data.photo_url,
+                });
+
+                console.log(data)
+                document.getElementById("divAbsoluteCreate").style.display = 'none';
+
+            } else{
+                alert('Los datos no estan correctos. Por favor, arregle y intente otra vez.')
+            }
+
+        });
         
     };
+
 
     // Función que vá cerrar y ocultar la tela
     // de creación de usuários
