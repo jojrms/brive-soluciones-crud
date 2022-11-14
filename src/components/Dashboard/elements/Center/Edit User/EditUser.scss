@@ -2,7 +2,8 @@
 
     .asideAbsolute{
         height: -webkit-fill-available;
-        display: flex;
+        display: grid;
+        grid-template-columns: min-content auto;
         padding: 0;
         background-color: white;
 
@@ -33,8 +34,8 @@
                 border-radius: 30px;
                 
                 aside{
-                    width: 90%;
-                    padding-inline-start: 3vh;
+                    width: 95%;
+                    padding: 0;
                     background-color: transparent;
 
                     label{
@@ -53,7 +54,7 @@
                         width: fit-content;
                         background-color: #0ebe66;
                         color: white;
-                        margin: auto 0vh 2vh auto;
+                        margin: 2vh 0vh 2vh auto;
                         align-items: center;
                         display: flex;
                         padding: 2vh 3vh;

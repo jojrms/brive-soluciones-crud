@@ -76,7 +76,7 @@ export default function EditUser(){
                             <label>Teléfono</label>
                             <input type='text' placeholder={dataUser.phone} onChange={(e) => setDataUser({...dataUser, phone: e.target.value})}/>
                             
-                            <button id='btnEditUser1' onClick={editUser}>Confirmar Edição</button>
+                            <button id='btnEditUser1' onClick={editUser}>Confirmar Modificaciones</button>
                         </aside>
 
                     </span>
