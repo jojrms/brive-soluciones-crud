@@ -36,6 +36,7 @@ aside{
         margin: 5vh 5vh 0 0;
 
         @media (max-width: 600px) {
+            margin: 5vh 2vh 0 0;
             grid-template-columns: auto;
         }
     }
