@@ -74,7 +74,7 @@ export default function CreateUser(){
     
 
     return(
-        <div className='divAbsolute' id='divAbsoluteCreate'>
+        <div className='divAbsolute' id='divAbsoluteCreate' onClick={closeDiv}>
             
             <aside id="asideBackgroundCreate">
 

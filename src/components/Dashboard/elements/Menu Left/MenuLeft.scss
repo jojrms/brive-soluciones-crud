@@ -3,6 +3,10 @@
     background-color: #131313;
     padding: 3vw;
 
+    @media (max-width: 600px) {
+        display: none;
+    }
+
     i{
         width: 50%;
         height: 5vh;
@@ -25,6 +29,10 @@
         margin: 1vh 0vw 2vh -15%;
         padding-bottom: 2vh;
         border-bottom: 1px solid #ffffff23;
+
+        @media (max-width: 600px) {
+            display: none;
+        }
 
         li{
             width: 100%;
