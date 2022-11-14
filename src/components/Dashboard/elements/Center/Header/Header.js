@@ -4,6 +4,10 @@ export default function Header({h1Title, userLogPhotoUrl, userLogName}){
     return(
         <>
             <header>
+
+                <img className="imgMenuLeft" src="https://img.icons8.com/ios-filled/50/null/menu-rounded.png"/>
+                <i/>
+
                 <button id='btnReturnHome'/>
 
                 <h1>{h1Title}</h1>

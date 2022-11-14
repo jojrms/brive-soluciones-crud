@@ -1,6 +1,11 @@
 @mixin sizeButtons {
     width: 2.5vh;
     height: 2.5vh;
+
+    @media (max-width: 600px) {
+        width: 3vh;
+        height: 3vh;
+    }
 }
 
 .divBackgroundUser{
@@ -21,6 +26,11 @@
         background-size: cover;
         margin: auto;
         background-color: whitesmoke;
+
+        @media (max-width: 600px) {
+            width: 15vw;
+            height: 15vw;
+        }
     }
     .spanInfoUser{
         width: 100%;
@@ -30,9 +40,20 @@
         h3{
             font-weight: 600;
             font-size: 1vw;
+
+            @media (max-width: 600px) {
+                font-size: 4vw;
+            }
         }
         p{
             font-size: .8vw;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @media (max-width: 600px) {
+                font-size: 3.5vw;
+            }
         }
     }
     .divButtonsFunction{
