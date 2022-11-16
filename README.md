@@ -38,4 +38,5 @@ Los mockups usado para las telas fueron sacados del site Dribbble, haciendo algu
 1. Clona este código en el CMD usando el comando "git clone URL_AQUI",
 2. Despúes de clonado, entre en el arquivo y abra en su editor de codigo,
 3. Haga un 'npm install' para hacer download de todos los modulos node,
-4. Finalize con un 'npm start' para abrir un localhost
+4. Vá en la pasta "server" y haga un 'npm start' para empezar el servidor,
+4. Vuelva a la pata padrón "brive-soluciones-crud' y haga un 'npm start' para empezar el localhost
