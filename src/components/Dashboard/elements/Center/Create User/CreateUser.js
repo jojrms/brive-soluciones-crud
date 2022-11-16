@@ -96,7 +96,7 @@ export default function CreateUser(){
                         </div>
                         <div>
                             <input type='radio' name='bitmoji-profile' onChange={() => {setData({...data, photo_url: 'https://smart-loads.com/uploads/images/2020-11/8894/icons/x170/8894-memoji-emojis-stickers-for-whatsapp-wastickerapps.png'})}}/>
-                            <img src='https://smart-loads.com/uploads/images/2020-11/8894/icons/x170/8894-memoji-emojis-stickers-for-whatsapp-wastickerapps.png'/>
+                            <img src='https://th.bing.com/th/id/R.dd892f36f22a4ecb7383ff6c126b5a2c?rik=2NdNfU%2b8KZN1lw&pid=ImgRaw&r=0'/>
                         </div>
                         <div>
                             <input type='radio' name='bitmoji-profile' onChange={() => {setData({...data, photo_url: 'https://www.whatphone.net/wp-content/uploads/2020/07/memoji_waves.png'})}}/>
